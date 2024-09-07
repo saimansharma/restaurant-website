@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+.register-body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 92vh;
+    background: #0C0C0C;
+}
+
+.register-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 480px;
+    height: 480px;
+    padding: 0px 30px 30px 30px;
+    
+}
+
+.register-header{
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.register-header header{
+    color: #F5EFDB;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.input-box .input-field{
+    color: #F5EFDB;
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.05);
+    outline: none;
+    transition: .3s;
+    background: #161616;
+}
+
+::placeholder{
+    font-weight: 500;
+    color: #b8b1b1;
+}
+
+.input-field:focus{
+    width: 105%;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+#check{
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.register-box a:hover{
+    text-decoration: underline;
+}
+
+section a{
+    color: #FFFFFF;
+}
+
+.input-submit{
+    position: relative;
+    margin-top: 20px;
+}
+
+.submit-btn{
+    width: 100%;
+    height: 60px;
+    background: #DCCA87;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-submit label{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: #0C0C0C;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.submit-btn:hover{
+    background: #DCCA87;
+    transform: scale(1.05,1);
+}
+
+.login-link{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+    color: #F5EFDB;
+}
+
+.login-link a{
+    color: #F5EFDB;
+    font-weight: 600;
+}
+
+.floating-message {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.floating-message.success {
+    background-color: #4caf50;
+}
+
+.floating-message.error {
+    background-color: #f44336;
+}

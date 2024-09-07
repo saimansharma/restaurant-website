@@ -1,0 +1,14 @@
+.floating-button-container{
+  height: 0;
+  width: 0;
+}
+
+.floating-button {
+  z-index: 2;
+  right: 30px;
+  bottom: 30px;
+}
+
+.custom-floating-button {
+  background-color: #64e922 !important; 
+}
