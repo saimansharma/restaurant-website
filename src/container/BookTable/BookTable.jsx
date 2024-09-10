@@ -68,12 +68,13 @@ const BookTable = () => {
       setTableSelected(false);
       console.log(formattedDate);
 
-      const response = await customFetch('http://localhost:8080/api/auth/user/check-availability', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/check-availability', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ requestedDate : formattedDate }),
+        credentials: 'include',
       });
 
       const data = await response.json();
@@ -103,12 +104,13 @@ const BookTable = () => {
 
       setLoading(true); 
 
-      const response = await customFetch('http://localhost:8080/api/auth/user/book-table', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/book-table', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({tableId : bookTable, timeSlot : bookTime, reservationDate : bookDate}),
+        credentials: 'include',
       });
 
       const data = await response.json();
@@ -133,11 +135,12 @@ const BookTable = () => {
     const activeBooking = async () => {
       // e.preventDefault();
 
-      const response = await customFetch('http://localhost:8080/api/auth/user/view-booking', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/view-booking', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
+        credentials: 'include',
       });
 
       const data = await response.json();
@@ -154,11 +157,12 @@ const BookTable = () => {
 
       setLoading(true);
 
-      const response = await customFetch('http://localhost:8080/api/auth/user/view-history', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/view-history', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
+        credentials: 'include',
       });
 
       const data = await response.json();
@@ -176,12 +180,13 @@ const BookTable = () => {
 
       setLoading(true);
 
-      const response = await customFetch('http://localhost:8080/api/auth/user/cancel-booking', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/cancel-booking', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({reservationId : reservationId}),
+        credentials: 'include',
       });
 
       const data = await response.json();
@@ -227,7 +232,7 @@ const BookTable = () => {
             style={{ color: "white"}}
           />
           <div class="input-submit">
-            <button type="submit" className="submit-btn check-availabilty-btn" id="submit"></button>
+            <button type="submit" className="submit-btn check-availabilty-btn" id="submit" disabled= {selectedDate ? false : true}></button>
             <label for="submit">Check Availability</label>
           </div>
         </form>
@@ -368,7 +373,7 @@ const BookTable = () => {
       <div className="table-row">
         {tables.map((table) => (
           <div key={table.id} className="table-card">
-            <img src={`http://localhost:8080${table.tableImg}`} alt="table" className="table-img"/>
+            <img src={`https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net${table.tableImg}`} alt="table" className="table-img"/>
             <div className="card-divider"></div>
             <div className="time-slots">
               {table.availableSlots.map((availableSlot) => (

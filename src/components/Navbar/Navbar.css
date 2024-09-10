@@ -83,7 +83,6 @@
     font-size: 27px;
     color: var(--color-golden);
     cursor: pointer;
-
     position: absolute;
     top: 20px;
     right: 20px;
@@ -113,11 +112,11 @@
 }
 
 @media screen and (max-width: 1150px) {
-    .app__navbar-links{
+    .app__navbar__links{
         display: none;
     }
 
-    .app__navbar-smallscreen{
+    .app__navbar__smallscreen{
         display: flex;
     }
 }
@@ -127,7 +126,7 @@
         padding: 1rem;
     }
 
-    .app__navbar-login{
+    .app__navbar__login{
         display: none;
     }
 

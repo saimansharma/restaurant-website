@@ -18,8 +18,8 @@ const SpecialMenu = () => {
         try {
           // Make a request to the backend to fetch awards
           const [winesResponse, cocktailsResponse] = await Promise.all([
-              fetch('http://localhost:8080/api/activewines'),
-              fetch('http://localhost:8080/api/activecocktails')
+              fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/activewines'),
+              fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/activecocktails')
               ]);
           if (winesResponse.ok && cocktailsResponse.ok) {
             // If the request is successful, parse the response and set the awards state
@@ -70,9 +70,9 @@ const SpecialMenu = () => {
 
     </div>
 
-    <div style={{marginTop: '15px'}}>
-       <button type='button' className='custom__button'>View More</button>
-    </div>
+    {/* <div style={{marginTop: '15px'}}>
+       <button type='button' className='custom__button' disabled>View More</button>
+    </div> */}
   </div>
   );
 };

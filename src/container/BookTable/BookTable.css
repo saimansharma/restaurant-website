@@ -159,10 +159,6 @@
 }
 
 
-/* .dropdown-content tr:hover {
-  background-color: #ddd;
-} */
-
 .no-data-message {
   text-align: center;
   color: #a4a4a4; /* Gray color for no data message */
@@ -425,8 +421,6 @@
   background: #DCCA87;
     transform: scale(1.05,1);
 }
-
-
   
   .floating-message {
     position: fixed;
@@ -451,3 +445,112 @@
     text-align: center;
     color: #cccccc;
   }
+
+  @media screen and (max-width: 650px) {
+  
+    .book-body{
+      display: inline-block;
+      align-items: center;
+      height: max-content;
+      width: 100vw;
+      max-width: 100%;
+      padding-bottom: 50px;
+      min-height: none;
+      background: #0C0C0C;
+  }
+
+  .book-box{
+    margin: 30px 0 0 0;
+  }
+
+  .dropdown-btn {
+    align-items:center;
+    width: 300px; /* Set the width of the dropdown button */
+  }
+
+    .tables-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .table-card {
+      width: 100vw; /* Each table card takes full width on small screens */
+      max-width: none; /* Remove the max-width constraint */
+      margin-bottom: 20px; /* Add margin between stacked table cards */
+    }
+
+    .dropdown-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+
+    .dropdown-content {
+      width: 300px;
+      height: 150px;
+    }
+
+    .booking-button label {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #0C0C0C;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+    .dropdown-btn-container label {
+      width: max-content; max-width: 100%;
+    }
+      
+    .dropdown-btn {
+      font-size: 14px; /* Reduce font size for the dropdown button */
+      padding: 15px 15px; /* Adjust padding for smaller screens */
+    }
+  
+    .dropdown-content th, .dropdown-content td {
+      font-size: 12px; /* Adjust table font size */
+      padding: 5px; /* Reduce padding for dropdown table cells */
+    }
+  
+    .time-slots {
+      justify-content: flex-start;
+      gap: 5px; /* Reduce gap between time slots */
+    }
+  
+    .time-slot {
+      flex-basis: 48%; /* Time slots take 2 per row on smaller screens */
+    }
+  
+    .availability-floating-box {
+      max-width: 100%; /* Ensure floating box uses full width */
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+  
+    .legend {
+      flex-direction: row;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+  }
+  
+    .confirm-floating-container {
+      flex-direction: column; /* Stack booking button and details vertically */
+      align-items: center; /* Center the content */
+      padding: 15px; /* Adjust padding */
+    }
+  
+    
+  
+    .details {
+      align-items: center;
+      padding: 0 40px;
+      /* padding: 0 60px; */
+      flex-direction: column; /* Stack details text vertically */
+      margin-bottom: 10px; /* Add space between text and button */
+    }
+  }
+  

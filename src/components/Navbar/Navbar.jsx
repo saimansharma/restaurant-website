@@ -27,7 +27,7 @@ const Navbar = () => {
 
    const fetchUserProfile = useCallback(async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/auth/user/profile', {
+      const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/profile', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const Navbar = () => {
     }
   }, []);
 
-  const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
+  const isAuthPage = location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/book-table' || location.pathname === '/profile';
   const prevLocationRef = useRef(location.pathname);
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
 
-    const response = await customFetch('http://localhost:8080/api/auth/user/logout', {
+    const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/logout', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -115,19 +115,16 @@ const Navbar = () => {
            <div className='app__navbar-smallscreen_overlay flex__center slide-bottom'>
              <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />
              <ul className='app__navbar-smallscreen_links'>
-               <li className='p__opensans'><Link to="/">Home</Link></li>
-               <li className='p__opensans'><a href="#about">About</a></li>
-               <li className='p__opensans'><a href="#menu">Menu</a></li>
-               <li className='p__opensans'><a href="#awards">Awards</a></li>
-               <li className='p__opensans'><a href="#contact">Contacts</a></li>
-               <li className='p__opensans'><a href="/">Book Table</a></li>
+               <li className='p__opensans'><Link to="/" onClick={() => setToggleMenu(false)}></Link></li>
                {isAuthenticated ? (
                 <>
-                  <li className='p__opensans'><Link to="/" onClick={() => setToggleMenu(false)}>{user.name}</Link></li>
-                  <li className='p__opensans'><button onClick={() => { setToggleMenu(false); handleLogout(); }}>Logout</button></li>
+                   <li className='p__opensans'><a href="/book-table">Book Table</a></li>
+                  <li className='p__opensans'><Link to="/profile" onClick={() => setToggleMenu(false)}>{username}</Link></li>
+                  <li className='p__opensans'><button style={{padding: '10px 20px', fontSize: "1.25rem"}} onClick={() => { setToggleMenu(false); handleLogout(); }}>Logout</button></li>
                 </>
               ) : (
                 <>
+                   <li className='p__opensans'><a href="/book-table">Book Table</a></li>
                   <li className='p__opensans'><Link to="/login" onClick={() => setToggleMenu(false)}>Log In</Link></li>
                   <li className='p__opensans'><Link to="/register" onClick={() => setToggleMenu(false)}>Register</Link></li>
                 </>

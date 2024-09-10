@@ -24,7 +24,7 @@ const NewLogin = () => {
 
             const user = { email, password };
 
-            const response = await customFetch('http://localhost:8080/api/auth/login', {
+            const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

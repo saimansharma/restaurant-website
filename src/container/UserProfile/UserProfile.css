@@ -116,3 +116,11 @@
 .floating-message.error {
     background-color: #f44336;
 }
+
+@media screen and (max-width: 650px){
+
+  .tabs {
+    width: 90%;
+  }
+
+}

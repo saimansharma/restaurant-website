@@ -17,7 +17,7 @@ const ResetPassword = () => {
             e.preventDefault();
         setLoading(true);
 
-            const response = await fetch('http://localhost:8080/api/auth/user/reset-password', {
+            const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/reset-password', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

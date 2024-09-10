@@ -25,12 +25,12 @@ const UserProfile = () => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await fetch('http://localhost:8080/api/auth/user/profile', {
+                const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/profile', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    credentials: 'include'
+                    credentials: 'include',
                 });
 
                 if(response.ok){
@@ -54,7 +54,7 @@ const UserProfile = () => {
     const handleUpdateProfile = async (e) => {
         e.preventDefault();
         setLoading(true);
-        const response = await fetch('http://localhost:8080/api/auth/user/update-profile', {
+        const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/update-profile', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ const UserProfile = () => {
     const handleChangePassword = async (e) => {
         e.preventDefault();
         setLoading(true);
-        const response = await fetch('http://localhost:8080/api/auth/user/update-password', {
+        const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/update-password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -44,7 +44,7 @@ const Verification = () => {
         setLoading(true);
         e.preventDefault();
 
-        const response = await fetch('http://localhost:8080/api/auth/verify', {
+        const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/verify', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ const Verification = () => {
         setLoading(true);
         console.log('Changing email from', currentEmail, 'to', newEmail); // Add logging here for debugging
 
-        const response = await fetch('http://localhost:8080/api/auth/update-email', {
+        const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/update-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ const Verification = () => {
         setCountdown(60);
         console.log('Sending verification code to', currentEmail);
 
-        const response = await fetch('http://localhost:8080/api/auth/send-otp', {
+        const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/send-otp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
