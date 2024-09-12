@@ -72,7 +72,7 @@ const BookTable = () => {
       setTableSelected(false);
       console.log(formattedDate);
 
-      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/check-availability', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/check-availability', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ const BookTable = () => {
 
       setLoading(true); 
 
-      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/book-table', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/book-table', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -141,7 +141,7 @@ const BookTable = () => {
 
     const activeBooking = async () => {
 
-      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/view-booking', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/view-booking', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ const BookTable = () => {
 
       setLoading(true);
 
-      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/view-history', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/view-history', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -186,7 +186,7 @@ const BookTable = () => {
 
       setLoading(true);
 
-      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/cancel-booking', {
+      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/cancel-booking', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -379,7 +379,7 @@ const BookTable = () => {
       <div className="table-row">
         {tables.map((table) => (
           <div key={table.id} className="table-card">
-            <img src={`https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net${table.tableImg}`} alt="table" className="table-img"/>
+            <img src={`https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net${table.tableImg}`} alt="table" className="table-img"/>
             <div className="card-divider"></div>
             <div className="time-slots">
               {table.availableSlots.map((availableSlot) => (

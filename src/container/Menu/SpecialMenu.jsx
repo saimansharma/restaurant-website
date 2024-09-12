@@ -18,8 +18,8 @@ const SpecialMenu = () => {
         try {
           // Make a request to the backend to fetch awards
           const [winesResponse, cocktailsResponse] = await Promise.all([
-              fetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/activewines'),
-              fetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/activecocktails')
+              fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/activewines'),
+              fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/activecocktails')
               ]);
           if (winesResponse.ok && cocktailsResponse.ok) {
             // If the request is successful, parse the response and set the awards state

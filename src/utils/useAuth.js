@@ -5,7 +5,7 @@ const useAuth = () => {
     const dispatch = useDispatch();
 
     const refreshToken = async () => {
-        const refreshResponse = await fetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/refresh-token', {
+        const refreshResponse = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/refresh-token', {
             method: 'POST',
             credentials: 'include',
         });
@@ -16,7 +16,7 @@ const useAuth = () => {
         } else {
             console.log("reaching else statement")
             console.error('Unable to refresh access token. Logging out.');
-            const logoutResponse = await fetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/logout', {
+            const logoutResponse = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/logout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

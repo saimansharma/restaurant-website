@@ -28,7 +28,7 @@ const NewRegister = () => {
         dispatch(addEmail(email))
 
         try{
-        const response = await fetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/register', {
+        const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
