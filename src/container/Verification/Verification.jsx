@@ -64,9 +64,9 @@ const Verification = () => {
             setTimeout(() => setShowMessage(false), 1000);
             dispatch(removeEmail());
             console.log("inside",username);
-            dispatch(setAuthentication({ isAuthenticated: true, username: username }));
+            // dispatch(setAuthentication({ isAuthenticated: true, username: username }));
             if(RegistrationPage){
-                navigate('/');
+                navigate('/login');
             } else {
                 navigate('/reset-password');
             }
