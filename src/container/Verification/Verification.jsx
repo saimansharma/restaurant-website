@@ -173,7 +173,7 @@ const Verification = () => {
                         />
                     </div>
                     <div class="input-submit">
-                        <button type="submit" class="submit-btn" id="submit"></button>
+                        <button type="submit" class="submit-btn" id="submit" disabled={showChangeEmailBox ? true : false}></button>
                         <label for="submit">Verify</label>
                     </div>
                 </form>
