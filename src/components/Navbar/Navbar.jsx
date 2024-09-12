@@ -27,7 +27,7 @@ const Navbar = () => {
 
    const fetchUserProfile = useCallback(async () => {
     try {
-      const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/profile', {
+      const response = await fetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/profile', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
 
-    const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/logout', {
+    const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/logout', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',

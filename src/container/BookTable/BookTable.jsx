@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";
@@ -35,6 +35,10 @@ const BookTable = () => {
     const [reservationId, setReservationId] = useState(null);
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {    
+      activeBooking();
+    }, [])
+    
 
     const today = new Date();
     const sixMonthsFromToday = addMonths(today, 6);
@@ -50,7 +54,7 @@ const BookTable = () => {
   
     const checkAvailability = async (e) => {
       e.preventDefault();
-      activeBooking();
+      console.log(activeBookings);
       
       if(activeBookings.length > 0){
         setMessageType('error');
@@ -68,7 +72,7 @@ const BookTable = () => {
       setTableSelected(false);
       console.log(formattedDate);
 
-      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/check-availability', {
+      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/check-availability', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -104,7 +108,7 @@ const BookTable = () => {
 
       setLoading(true); 
 
-      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/book-table', {
+      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/book-table', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -113,9 +117,12 @@ const BookTable = () => {
         credentials: 'include',
       });
 
+      console.log(bookTable, bookTime, bookDate);
       const data = await response.json();
+      console.log(data);
 
       if(response.ok) {
+        console.log("response okay")
         setMessageType('success');
         setMessage(data.message);
         setShowMessage(true);
@@ -133,9 +140,8 @@ const BookTable = () => {
     }
 
     const activeBooking = async () => {
-      // e.preventDefault();
 
-      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/view-booking', {
+      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/view-booking', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -157,7 +163,7 @@ const BookTable = () => {
 
       setLoading(true);
 
-      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/view-history', {
+      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/view-history', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -180,7 +186,7 @@ const BookTable = () => {
 
       setLoading(true);
 
-      const response = await customFetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/auth/user/cancel-booking', {
+      const response = await customFetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/auth/user/cancel-booking', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -373,7 +379,7 @@ const BookTable = () => {
       <div className="table-row">
         {tables.map((table) => (
           <div key={table.id} className="table-card">
-            <img src={`https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net${table.tableImg}`} alt="table" className="table-img"/>
+            <img src={`https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net${table.tableImg}`} alt="table" className="table-img"/>
             <div className="card-divider"></div>
             <div className="time-slots">
               {table.availableSlots.map((availableSlot) => (

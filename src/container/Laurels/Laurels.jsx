@@ -14,7 +14,7 @@ const Laurels = () => {
   const fetchAwards = async () => {
     try {
       // Make a request to the backend to fetch awards
-      const response = await fetch('https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net/api/awards');
+      const response = await fetch('https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net/api/awards');
       if (response.ok) {
         // If the request is successful, parse the response and set the awards state
         const data = await response.json();
@@ -37,7 +37,7 @@ const Laurels = () => {
 
       <div className="app__laurels_awards">
         {awards.map((award) => <div key={award.id} className="app__laurels_awards-card">
-                                         <img src={`https://restaurant-backend-springboot-fwcdbhdkdscvdhhe.uksouth-01.azurewebsites.net${award.imageUrl}`} alt="awards"/>
+                                         <img src={`https://restaurant-springboot-backend-admin-hvbsbzg5hvekhedz.uksouth-01.azurewebsites.net${award.imageUrl}`} alt="awards"/>
                                         <div className="app__laurels_awards-card_content">
                                           <p className="p__cormorant" style={{ color: '#DCCA87' }}>{award.title}</p>
                                           <p className="p__opensans">{award.subtitle}</p>
